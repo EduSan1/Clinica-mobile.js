@@ -14,6 +14,7 @@ import { useEffect, useState } from "react";
 import { Header } from "../../components/Header";
 import api from "../../constants/api";
 import Button from "../../components/Button";
+import { HomeCard } from "./Card";
 
 export const HomePage = ({ navigation }) => {
     const [patients, setPatients] = useState([]);
@@ -30,34 +31,7 @@ export const HomePage = ({ navigation }) => {
 
             <ScrollView style={styles.cardContainer}>
                 {patients.map((patient) => {
-                    return (
-                        <View style={styles.card}>
-                            <Text style={styles.textCard}>
-                                Nome: {patient.name}
-                            </Text>
-                            <Text style={styles.textCard}>
-                                Celular: {patient.phone}
-                            </Text>
-                            <Text style={styles.textCard}>
-                                Telefone: {patient.telephone}
-                            </Text>
-                            <Text style={styles.textCard}>
-                                E-mail: {patient.mail}
-                            </Text>
-                            {patient.responsibleName && (
-                                <Text style={styles.textCard}>
-                                    Nome do responsável:{" "}
-                                    {patient.responsibleName}
-                                </Text>
-                            )}
-                            {patient.responsiblePhone && (
-                                <Text style={styles.textCard}>
-                                    Telefone do responsável:{" "}
-                                    {patient.responsiblePhone}
-                                </Text>
-                            )}
-                        </View>
-                    );
+                    return <HomeCard patient={patient} />;
                 })}
             </ScrollView>
             <Button

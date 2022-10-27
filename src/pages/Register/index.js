@@ -50,6 +50,7 @@ const RegisterPage = ({ navigation }) => {
                         hasError={hasError}
                         iconName="person-outline"
                         name="name"
+                        maxLength={500}
                         value={userDetails.name}
                         title="Nome"
                         onChangeText={(text) => handlerOnChange(text, "name")}
@@ -59,6 +60,7 @@ const RegisterPage = ({ navigation }) => {
                         hasError={hasError}
                         iconName="local-phone"
                         name="telephone"
+                        maxLength={10}
                         value={userDetails.telephone}
                         title="Telefone"
                         onChangeText={(text) =>
@@ -70,6 +72,7 @@ const RegisterPage = ({ navigation }) => {
                         hasError={hasError}
                         iconName="phone-iphone"
                         name="phone"
+                        maxLength={11}
                         value={userDetails.phone}
                         title="Celular"
                         onChangeText={(text) => handlerOnChange(text, "phone")}
@@ -79,6 +82,7 @@ const RegisterPage = ({ navigation }) => {
                         hasError={hasError}
                         iconName="mail-outline"
                         name="mail"
+                        maxLength={100}
                         value={userDetails.mail}
                         title="E-mail"
                         onChangeText={(text) => handlerOnChange(text, "mail")}
@@ -89,6 +93,7 @@ const RegisterPage = ({ navigation }) => {
                         name="responsibleName"
                         value={userDetails.responsibleName}
                         title="Nome do responsável"
+                        maxLength={500}
                         onChangeText={(text) =>
                             handlerOnChange(text, "responsibleName")
                         }
@@ -99,6 +104,7 @@ const RegisterPage = ({ navigation }) => {
                         name="responsiblePhone"
                         value={userDetails.responsiblePhone}
                         title="Telefone do responsável"
+                        maxLength={10}
                         onChangeText={(text) =>
                             handlerOnChange(text, "responsiblePhone")
                         }
