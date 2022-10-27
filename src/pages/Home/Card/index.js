@@ -1,6 +1,9 @@
 import { StyleSheet, Text, View } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
 
 export const HomeCard = ({ patient }) => {
+    // create
+    // delete-outline
     return (
         <View key={patient.id} style={styles.card}>
             <Text style={styles.textCard}>Nome: {patient.name}</Text>
@@ -17,6 +20,14 @@ export const HomeCard = ({ patient }) => {
                     Telefone do responsável: {patient.responsiblePhone}
                 </Text>
             )}
+            <View style={styles.actionsContainer}>
+                <MaterialIcons name={"create"} size={40} color={"#616afc"} />
+                <MaterialIcons
+                    name={"delete-outline"}
+                    size={40}
+                    color={"#616afc"}
+                />
+            </View>
         </View>
     );
 };
@@ -46,5 +57,12 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: "#616afc",
         fontWeight: "300",
+    },
+    actionsContainer: {
+        width: "100%",
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "space-evenly",
     },
 });
